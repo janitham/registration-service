@@ -79,11 +79,11 @@ task<Exec>("updateDev") {
 }
 
 task<Exec>("subTreePull") {
-    commandLine("git", "subtree", "pull", "--prefix", "env/dev", "https://github.com/janitham/cmm707-gitops.git", "master", "--squash")
+    commandLine("git", "subtree", "pull", "--prefix", "env/dev/", "https://github.com/janitham/cmm707-gitops.git", "master", "--squash")
 }
 
 task<Exec>("subTreePush") {
-	commandLine("git", "subtree", "push", "--prefix", "env/dev", "https://github.com/janitham/cmm707-gitops.git", "master")
+	commandLine("git", "subtree", "push", "--prefix", "env/dev/", "https://github.com/janitham/cmm707-gitops.git", "master")
 }
 
 task<Exec>("gitAddAll") {
