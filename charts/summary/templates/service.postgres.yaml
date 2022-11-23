@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  name: summary
+  namespace: {{ include "registration.namespace" . }}
+spec:
+  selector:
+    app.kubernetes.io/instance: summary
+    app.kubernetes.io/name: summary
+  ports:
+  - port: 4444
+    targetPort: 5432

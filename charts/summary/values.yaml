@@ -1,0 +1,19 @@
+image:
+  registry: docker
+  repository: bitnami
+  tag: 14.4.0-debian-11-r0
+
+probe:
+  rediness:
+    failureThreshold: 6
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 5
+  liveness:
+    failureThreshold: 6
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 5
+    
