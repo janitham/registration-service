@@ -1,7 +1,7 @@
 image:
   registry: docker
   repository: bitnami
-  tag: 14.4.0-debian-11-r0
+  tag: 0.0.1-SNAPSHOT
 
 probe:
   rediness:
