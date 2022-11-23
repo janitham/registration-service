@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  name: postgres
+  namespace: {{ include "pactbroker.namespace" . }}
+spec:
+  selector:
+    app.kubernetes.io/instance: postgres
+    app.kubernetes.io/name: postgres
+  ports:
+  - port: 5432
+    targetPort: 5432
