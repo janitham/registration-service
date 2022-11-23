@@ -63,4 +63,4 @@ jobs:
       - name: Run Gradle Test
         uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
         with:
-          arguments: jib subTreePull updateDev gitAddAll gitCommit subTreePush -x test
+          arguments: jib subTreePull gitUser updateDev gitAddAll gitCommit subTreePush -x test

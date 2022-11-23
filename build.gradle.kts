@@ -93,3 +93,7 @@ task<Exec>("gitAddAll") {
 task<Exec>("gitCommit") {
 	commandLine("git", "commit", "-m", "updating version")
 }
+
+task<Exec>("gitUser") {
+    commandLine("git", "config", "user.name", "Action")
+}
