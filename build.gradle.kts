@@ -56,19 +56,19 @@ jib{
 	}
 	to {
 		val sanitizedVersion = version.toString().replace('+', '_')
-		image = "janithasen/continuous-delivery-example"
+		image = "registration-service"
 		tags = setOf("latest", "$sanitizedVersion")
 	}
 	container {
-		mainClass = "vote.california.registrationservice.RegistrationServiceApplication"
+		//mainClass = "vote.california.registrationservice.RegistrationServiceApplication"
 		ports = listOf("8080/tcp", "9000/tcp")
-		appRoot = "/app"
-		workingDirectory = "/app"
+		//appRoot = "/app"
+		//workingDirectory = "/app"
 		creationTime = "USE_CURRENT_TIMESTAMP"
-		jvmFlags = listOf(
-			"-XX:InitialRAMPercentage=40.0",
-			"-XX:MaxRAMPercentage=75.0",
-		)
+		//jvmFlags = listOf(
+		//	"-XX:InitialRAMPercentage=40.0",
+		//	"-XX:MaxRAMPercentage=75.0",
+		//)
 	}
 }
 
