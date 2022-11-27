@@ -1,18 +1,19 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+
 plugins {
 	id("org.springframework.boot") version "2.7.0"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id("com.google.cloud.tools.jib") version "3.2.1"
 	id("maven-publish")
 	id("org.unbroken-dome.helm") version "1.7.0"
+	id("nebula.release") version "17.1.0"
 	kotlin("jvm") version "1.6.21"
 	kotlin("plugin.spring") version "1.6.21"
-
 }
 
 group = "vote.california"
-version = "0.1.1-SNAPSHOT"
+//version = "0.1.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
@@ -47,19 +48,16 @@ tasks.withType<Test> {
 
 jib{
 	from {
-		image = "amazoncorretto:17.0.3-alpine3.15"
-		auth {
+		image = "dvmarques/openjdk-17-jdk-alpine-with-timezone@sha256:cc26b502a9aa7015fc6927963a1ba4d453d76f54360df7ce9a3f32b75cb492c1"
+		/*auth {
 			username = System.getenv("DOCKER_USER")
 			password = System.getenv("DOCKER_PASSWORD")
-		}
+		}*/
 	}
 	to {
+		val sanitizedVersion = version.toString().replace('+', '_')
 		image = "janithasen/continuous-delivery-example"
-		tags = setOf("latest", "${project.version}")
-		auth {
-			username = System.getenv("DOCKER_USER")
-			password = System.getenv("DOCKER_PASSWORD")
-		}
+		tags = setOf("latest", "$sanitizedVersion")
 	}
 	container {
 		mainClass = "com.zlrx.blog.githubactionk8scd.GithubActionK8sCdApplicationKt"
@@ -72,6 +70,10 @@ jib{
 			"-XX:MaxRAMPercentage=75.0",
 		)
 	}
+}
+
+task<Exec>("devVersion") {
+	commandLine("cmd","/c", "echo", "$version",">", "devVersion")
 }
 
 task<Exec>("updateDev") {
