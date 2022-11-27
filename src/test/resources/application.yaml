@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      host: localhost #for now I kept localhost
+      port: 27017
+      database: reg
+      #uri: mongodb://admin:admin@localhost:27017/reg
