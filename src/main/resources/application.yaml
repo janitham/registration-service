@@ -4,3 +4,5 @@ spring:
       host: localhost #for now I kept localhost
       port: 27017
       database: reg
+
+management.endpoints.web.exposure.include: '*'
