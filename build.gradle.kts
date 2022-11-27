@@ -73,7 +73,7 @@ jib{
 }
 
 task<Exec>("devVersion") {
-	commandLine("cmd","/c", "echo", "$version",">", "devVersion")
+	commandLine("cmd","/c", "echo", "$version",">", "dVersion")
 }
 
 task<Exec>("updateDev") {
