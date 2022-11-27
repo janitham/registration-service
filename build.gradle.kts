@@ -60,7 +60,7 @@ jib{
 		tags = setOf("latest", "$sanitizedVersion")
 	}
 	container {
-		mainClass = "com.zlrx.blog.githubactionk8scd.GithubActionK8sCdApplicationKt"
+		mainClass = "vote.california.registrationservice.RegistrationServiceApplication"
 		ports = listOf("8080/tcp", "9000/tcp")
 		appRoot = "/app"
 		workingDirectory = "/app"
