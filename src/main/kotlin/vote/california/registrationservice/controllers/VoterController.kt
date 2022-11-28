@@ -1,5 +1,6 @@
 package vote.california.registrationservice.controllers
 
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import vote.california.registrationservice.data.Voter
@@ -15,7 +16,7 @@ class VoterController(
     fun register(
         @RequestBody voter: Voter
     ): ResponseEntity<Voter> {
-        return ResponseEntity.ok(voterService.registerVoter(voter))
+        return ResponseEntity(voterService.registerVoter(voter), HttpStatus.CREATED)
     }
 
     @GetMapping()
@@ -27,10 +28,10 @@ class VoterController(
     fun update(
         @RequestBody voter: Voter
     ): ResponseEntity<Voter> {
-        return ResponseEntity.ok(voterService.updateVoter(voter))
+        return ResponseEntity(voterService.updateVoter(voter), HttpStatus.OK)
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{voterId}")
     fun delete(@PathVariable voterId: String) {
         voterService.deleteUser(voterId)
     }
