@@ -6,3 +6,7 @@ spring:
       database: reg
 
 management.endpoints.web.exposure.include: '*'
+
+summary:
+  host: localhost
+  port: 8081
