@@ -3,7 +3,7 @@ spring:
     mongodb:
       host: localhost #for now I kept localhost
       port: 27017
-      database: reg
+      database:
       authentication-database: admin
       username:
       password:
