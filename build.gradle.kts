@@ -38,6 +38,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("io.micrometer:micrometer-registry-prometheus")
 	testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
+	implementation("org.springframework.boot:spring-boot-starter-security")
 //	testImplementation("org.testcontainers:junit-jupiter")
 //	testImplementation("org.testcontainers:mongodb")
 }
