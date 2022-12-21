@@ -85,26 +85,26 @@ task<Exec>("devVersion") {
 	commandLine("cmd","/c", "echo", "$sanitizedVersion",">", "dVersion")
 }
 
-task<Exec>("updateDev") {
-	commandLine("sed", "-i","/tag/c\\  tag: $version", "env/dev/charts/registration/values.yaml")
-}
+//task<Exec>("updateDev") {
+//	commandLine("sed", "-i","/tag/c\\  tag: $version", "env/dev/charts/registration/values.yaml")
+//}
 
-task<Exec>("subTreePull") {
-    commandLine("git", "subtree", "pull", "--prefix", "env/dev/", "https://github.com/janitham/cmm707-gitops.git", "master", "--squash")
-}
+//task<Exec>("subTreePull") {
+//    commandLine("git", "subtree", "pull", "--prefix", "env/dev/", "https://github.com/janitham/cmm707-gitops.git", "master", "--squash")
+//}
 
-task<Exec>("subTreePush") {
-	commandLine("git", "subtree", "push", "--prefix", "env/dev/", "https://github.com/janitham/cmm707-gitops.git", "master")
-}
+//task<Exec>("subTreePush") {
+//	commandLine("git", "subtree", "push", "--prefix", "env/dev/", "https://github.com/janitham/cmm707-gitops.git", "master")
+//}
 
-task<Exec>("gitAddAll") {
-	commandLine("git", "add", "--all")
-}
+//task<Exec>("gitAddAll") {
+//	commandLine("git", "add", "--all")
+//}
 
-task<Exec>("gitCommit") {
-	commandLine("git", "commit", "-m", "updating version")
-}
+//task<Exec>("gitCommit") {
+//	commandLine("git", "commit", "-m", "updating version")
+//}
 
-task<Exec>("gitUser") {
-    commandLine("git", "config", "user.name", "Action")
-}
+//task<Exec>("gitUser") {
+ //   commandLine("git", "config", "user.name", "Action")
+//}
