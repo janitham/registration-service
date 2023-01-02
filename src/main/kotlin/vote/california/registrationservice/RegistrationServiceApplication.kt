@@ -9,3 +9,4 @@ class RegistrationServiceApplication
 fun main(args: Array<String>) {
 	runApplication<RegistrationServiceApplication>(*args)
 }
+
